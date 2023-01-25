@@ -158,7 +158,7 @@ const SignIn = ({ handleSignupForm }) => {
           </div>
 
           <div className='loginbutton' onClick={handleSignup}>
-            Admin Log-in
+            Admin Log In
           </div>
 
           {invalidLoginFocused && invalidLogin}
