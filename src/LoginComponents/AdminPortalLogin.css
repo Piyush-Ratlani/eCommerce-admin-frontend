@@ -1,0 +1,477 @@
+.adminPageHomeMainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap");
+.adminPageLoginTitle {
+  font-family: "Readex Pro", sans-serif;
+  font-size: 34px;
+}
+.main-div {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #dee2e6;
+}
+.main-div-1 {
+  /* border: 2px solid red; */
+  box-sizing: border-box;
+  width: 60%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 19px;
+  box-sizing: border-box;
+}
+.Brand-Name {
+  color: #28282b;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 50px;
+  padding: 17px;
+  padding-left: 95px;
+}
+.Brand-Name-Span-Line {
+  font-size: 70px;
+}
+.Brand-Name-Span {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 50px;
+}
+.navbar {
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  height: 12vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 124px;
+  box-sizing: border-box;
+}
+.logo {
+  width: 87px;
+  height: 87px;
+  position: absolute;
+  top: 17px;
+  left: 46px;
+  /* border: 2px solid red; */
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
+.main-div-2 {
+  /* border: 2px solid red; */
+  box-sizing: border-box;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.loginbox {
+  /* border: 2px solid white; */
+  margin-top: 53px;
+  width: 86%;
+  height: 61vh;
+  border-radius: 26px;
+  background-color: #dee2e6;
+  box-shadow: -3px -3px 20px rgb(255, 255, 255), 4px 4px 16px #747474da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.loginhead {
+  color: #28282b;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  /* border: 2px solid red; */
+  padding: 12px;
+}
+.sub-brand {
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+}
+.username {
+  /* border: 2px solid red; */
+  width: 60%;
+  color: #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 9px;
+  border-radius: 23px;
+  background-color: #52525ba6;
+  margin: 12px;
+}
+.username-input {
+  border: none;
+  outline: none;
+  background: none;
+  /* border-bottom: 2px solid #e1e1e1; */
+  width: 80%;
+  font-size: 19px;
+  margin-left: 7px;
+  color: white;
+}
+.username-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bebec3;
+  opacity: 1; /* Firefox */
+}
+.username-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: red;
+}
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap");
+.loginbutton {
+  font-size: 18px;
+  font-family: "Nunito Sans", sans-serif;
+  border-radius: 23px;
+  background-color: #e85d04;
+  width: 60%;
+  margin: 17px 12px;
+  color: white;
+  padding: 9px;
+  cursor: pointer;
+  transition: ease-out 0.24s;
+  box-sizing: border-box;
+  border: 2px solid #e85d04;
+  text-decoration: none;
+}
+.loginbutton:hover {
+  box-sizing: border-box;
+  /* margin: 16px 12px; */
+  font-size: 18px;
+  font-weight: 800;
+  color: #e1e1e1;
+  background-color: #28282b;
+  border: 2px solid #28282b;
+  width: 60%;
+}
+.loginbutton-nonactive {
+  font-size: 18px;
+  font-family: "Nunito Sans", sans-serif;
+  border-radius: 23px;
+  background-color: #e85d04;
+  width: 60%;
+  margin: 17px 12px;
+  color: white;
+  padding: 9px;
+  cursor: default;
+  transition: ease-out 0.24s;
+  box-sizing: border-box;
+  border: 2px solid #e85d04;
+  opacity: 0.4;
+}
+.signinbutton {
+  font-family: "Nunito Sans", sans-serif;
+  /* border: 2px solid red; */
+  width: 40%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e85d04;
+  font-size: 16px;
+  border-radius: 23px;
+  margin: 5px 0px;
+  cursor: pointer;
+  transition: ease-out 0.24s;
+  padding: 9px 32px;
+}
+.signinbutton:hover {
+  width: 45%;
+  font-size: 19px;
+  color: black;
+}
+.signupbox {
+  /* border: 2px solid white; */
+  box-sizing: border-box;
+  margin-top: 78px;
+  width: 86%;
+  height: 74vh;
+  border-radius: 26px;
+  background-color: #dee2e6;
+  box-shadow: -3px -3px 20px rgb(255, 255, 255), 4px 4px 16px #747474da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+.signupbox::-webkit-scrollbar {
+  display: none;
+}
+.unique {
+  background-color: rgba(255, 255, 255, 0.849);
+  color: rgb(255, 0, 0);
+  padding: 3px 28px;
+  width: 45%;
+  border-radius: 7px;
+  font-family: "Nunito Sans", sans-serif;
+  text-align: left;
+  font-size: 14px;
+}
+.username-signup {
+  /* border: 2px solid red; */
+  width: 60%;
+  color: #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 7px;
+  border-radius: 23px;
+  background-color: #52525ba6;
+  margin: 9px;
+}
+@media only screen and (max-width: 830px) {
+  .adminPageHomeMainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap");
+  .adminPageLoginTitle {
+    font-family: "Readex Pro", sans-serif;
+    font-size: 34px;
+  }
+  .main-div {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #dee2e6;
+  }
+  .main-div-1 {
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 19px;
+    box-sizing: border-box;
+  }
+  .Brand-Name {
+    color: #28282b;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 30px;
+    padding: 17px;
+    /* padding-left: 95px; */
+  }
+  .Brand-Name-Span-Line {
+    font-size: 70px;
+  }
+  .Brand-Name-Span {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 30px;
+  }
+  .navbar {
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    height: 12vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 124px;
+    box-sizing: border-box;
+  }
+  .logo {
+    width: 87px;
+    height: 87px;
+    position: absolute;
+    top: 17px;
+    left: 46px;
+    /* border: 2px solid red; */
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+  
+  .main-div-2 {
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .loginbox {
+    /* border: 2px solid white; */
+    margin-top: 53px;
+    width: 86%;
+    margin-left: 7%;
+    height: 61vh;
+    border-radius: 26px;
+    background-color: #dee2e6;
+    box-shadow: -3px -3px 20px rgb(255, 255, 255), 4px 4px 16px #747474da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .loginhead {
+    color: #28282b;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    /* border: 2px solid red; */
+    padding: 12px;
+  }
+  .sub-brand {
+    font-family: "Roboto", sans-serif;
+    font-size: 35px;
+  }
+  .username {
+    /* border: 2px solid red; */
+    width: 60%;
+    color: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 9px;
+    border-radius: 23px;
+    background-color: #52525ba6;
+    margin: 12px;
+  }
+  .username-input {
+    border: none;
+    outline: none;
+    background: none;
+    /* border-bottom: 2px solid #e1e1e1; */
+    width: 80%;
+    font-size: 19px;
+    margin-left: 7px;
+    color: white;
+  }
+  .username-input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #bebec3;
+    opacity: 1; /* Firefox */
+  }
+  .username-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: red;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap");
+  .loginbutton {
+    font-size: 18px;
+    font-family: "Nunito Sans", sans-serif;
+    border-radius: 23px;
+    background-color: #e85d04;
+    width: 60%;
+    margin: 17px 12px;
+    color: white;
+    padding: 9px;
+    cursor: pointer;
+    transition: ease-out 0.24s;
+    box-sizing: border-box;
+    border: 2px solid #e85d04;
+    text-decoration: none;
+  }
+  .loginbutton:hover {
+    box-sizing: border-box;
+    /* margin: 16px 12px; */
+    font-size: 18px;
+    font-weight: 800;
+    color: #e1e1e1;
+    background-color: #28282b;
+    border: 2px solid #28282b;
+    width: 60%;
+  }
+  .loginbutton-nonactive {
+    font-size: 18px;
+    font-family: "Nunito Sans", sans-serif;
+    border-radius: 23px;
+    background-color: #e85d04;
+    width: 60%;
+    margin: 17px 12px;
+    color: white;
+    padding: 9px;
+    cursor: default;
+    transition: ease-out 0.24s;
+    box-sizing: border-box;
+    border: 2px solid #e85d04;
+    opacity: 0.4;
+  }
+  .signinbutton {
+    font-family: "Nunito Sans", sans-serif;
+    /* border: 2px solid red; */
+    width: 40%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e85d04;
+    font-size: 16px;
+    border-radius: 23px;
+    margin: 5px 0px;
+    cursor: pointer;
+    transition: ease-out 0.24s;
+    padding: 9px 32px;
+  }
+  .signinbutton:hover {
+    width: 45%;
+    font-size: 19px;
+    color: black;
+  }
+  .signupbox {
+    /* border: 2px solid white; */
+    box-sizing: border-box;
+    margin-top: 78px;
+    width: 86%;
+    height: 74vh;
+    border-radius: 26px;
+    background-color: #dee2e6;
+    box-shadow: -3px -3px 20px rgb(255, 255, 255), 4px 4px 16px #747474da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+  .signupbox::-webkit-scrollbar {
+    display: none;
+  }
+  .unique {
+    background-color: rgba(255, 255, 255, 0.849);
+    color: rgb(255, 0, 0);
+    padding: 3px 28px;
+    width: 45%;
+    border-radius: 7px;
+    font-family: "Nunito Sans", sans-serif;
+    text-align: left;
+    font-size: 14px;
+  }
+  .username-signup {
+    /* border: 2px solid red; */
+    width: 60%;
+    color: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 7px;
+    border-radius: 23px;
+    background-color: #52525ba6;
+    margin: 9px;
+  }
+}
