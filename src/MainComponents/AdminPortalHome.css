@@ -82,19 +82,19 @@ a:active { text-decoration: none; }
   position: absolute;
   top:2vh;
   right: 5vw;
-  background-color: #cccccc;
+  /* background-color: #cccccc; */
   width: 22vw;
   border-radius: 12px;
 }
 .searchbar input{
-  background-color: rgba(196, 194, 194, 0.132);
+  background-color: rgba(196, 194, 194, 0.413);
   outline: none;
   border: none;
   padding: 12px;
   border-radius: 12px;
   font-family: "Readex Pro", sans-serif;
   text-align: left;
-  width: 100%;
+  width: 90%;
 }
 
 .addArticleFeild {
