@@ -22,6 +22,7 @@ const AdminPortalOrderDetails = () => {
       .then(result => {
         if (result.status === 'success') {
           setOrderList(result.data.orders);
+          // console.log(result.data.orders);
         } else {
           console.log(result.error.message);
         }
@@ -132,12 +133,47 @@ const AdminPortalOrderDetails = () => {
                 <ul>
                   {item.cart.map(cartItem => (
                     <li key={cartItem._id} className='listItem'>
-                      <div className='itemPrice'>
-                        {cartItem.product
-                          ? `Item name : ${cartItem.product.name} | Reselled Item id : ${cartItem.product._id} |
-                      Quantity : ${cartItem.quantity} | Product Id : #${cartItem.product.productId}`
-                          : `Product Deleted |
-                      Quantity : ${cartItem.quantity}`}
+                      <img
+                        src={
+                          cartItem?.product?.displayImage[0]?.url
+                            ? cartItem?.product?.displayImage[0]?.url
+                            : 'https://static.thenounproject.com/png/5191452-200.png'
+                        }
+                      />
+                      <div>
+                        {cartItem?.product?.seller?.accountType === 'client' ? (
+                          <div className='reselledBatch'>Reselled Product</div>
+                        ) : (
+                          ''
+                        )}
+                        {cartItem.product ? (
+                          <div className='itemPrice orderDetailEachlist'>
+                            <div
+                              style={{ marginBottom: '1%' }}
+                            >{`Item name : ${cartItem.product.name} | Product Id : #${cartItem.product.productId} | Price : ${cartItem.product.originalPrice} |
+                      Quantity : ${cartItem.quantity}`}</div>
+                            {cartItem?.product?.seller?.accountType ===
+                              'client' && (
+                              <div>
+                                {`Reselled Item id : ${
+                                  cartItem.product._id
+                                } | Reseller Name : ${
+                                  cartItem.product.seller.displayName
+                                } | Reseller ID : ${
+                                  cartItem.product.seller._id
+                                } | New Price : ${
+                                  cartItem.product.newPrice
+                                } | Margin : ${
+                                  cartItem.product.newPrice -
+                                  cartItem.product.originalPrice
+                                }`}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <div>{`Product Deleted |
+                          Quantity : ${cartItem.quantity}`}</div>
+                        )}
                       </div>
                     </li>
                   ))}
@@ -156,6 +192,9 @@ const AdminPortalOrderDetails = () => {
                   </li> */}
                 </ul>
                 {/* <div className='itemPrice'>Reseller Id : Reseller</div> */}
+                <div className='itemPrice'>
+                  <b>Total Order Price : {item.price}</b>
+                </div>
                 <div className='itemPrice'>
                   Payment Status : {item.paymentMode}
                 </div>
@@ -215,17 +254,17 @@ const AdminPortalOrderDetails = () => {
                   *if status will be changed to delivered resellers wallet will
                   be updated
                 </div>
+                {item.cancelled ? (
+                  <div className='cancelButton'>Order Cancelled</div>
+                ) : (
+                  <div
+                    className='cancelButton'
+                    onClick={() => handleCancelOrder(item._id)}
+                  >
+                    Cancel
+                  </div>
+                )}
               </div>
-              {item.cancelled ? (
-                <div className='cancelButton'>Order Cancelled</div>
-              ) : (
-                <div
-                  className='cancelButton'
-                  onClick={() => handleCancelOrder(item._id)}
-                >
-                  Cancel
-                </div>
-              )}
             </div>
           ))}
         </div>

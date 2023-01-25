@@ -10,6 +10,7 @@ const ProductsOnSite = () => {
   const [avilability, setAvilability] = useState(true);
   const { dispatch } = useContext(UserContext);
   const [products, setProducts] = useState([]);
+  const [defaultProducts, setDefaultProducts] = useState([]);
   const navigation = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
 
@@ -23,6 +24,7 @@ const ProductsOnSite = () => {
       .then(result => {
         if (result.status === 'success') {
           setProducts(result.data.products);
+          setDefaultProducts(result.data.products);
         } else {
           toast.info(result.error.message);
           console.log(result.error.message);
@@ -30,6 +32,24 @@ const ProductsOnSite = () => {
       })
       .catch(err => console.log(err));
   }, []);
+
+  const filterIt = text => {
+    if (text == '' || text.trim() == '' || text.trim() == null) {
+      setProducts(defaultProducts);
+      return null;
+    }
+    const lowerText = text.toLowerCase();
+
+    const filterItem = defaultProducts.filter(item => {
+      const lowerName = item.productId.toLowerCase();
+      const match = lowerName.match(lowerText);
+      // console.log(match);
+      if (match != null) {
+        return true;
+      } else return false;
+    });
+    setProducts(filterItem);
+  };
 
   const handleAvailability = (prodId, status) => {
     fetch(`${process.env.REACT_APP_API_URI}/admin/product/${prodId}/edit/all`, {
@@ -121,6 +141,13 @@ const ProductsOnSite = () => {
         </div>
         <div className='adminPagemainContainer'>
           <div className='addarticleHeading'>Products On Site</div>
+          <div className='searchbar'>
+            <input
+              type='text'
+              placeholder='Search product by Id'
+              onChange={e => filterIt(e.target.value)}
+            />
+          </div>
           {products.map(item => (
             <div className='eachOrderContainer' key={item._id}>
               <img
