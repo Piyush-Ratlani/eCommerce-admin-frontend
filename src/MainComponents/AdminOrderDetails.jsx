@@ -10,6 +10,7 @@ const AdminPortalOrderDetails = () => {
   const navigation = useNavigate();
   const { dispatch } = useContext(UserContext);
   const [orderList, setOrderList] = useState([]);
+  const [defaultProducts, setDefaultProducts] = useState([]);
   const user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
@@ -22,12 +23,31 @@ const AdminPortalOrderDetails = () => {
       .then(result => {
         if (result.status === 'success') {
           setOrderList(result.data.orders);
+          setDefaultProducts(result.data.orders);
           // console.log(result.data.orders);
         } else {
           console.log(result.error.message);
         }
       });
-  }, [orderList]);
+  }, []);
+
+  const filterIt = text => {
+    if (text == '' || text.trim() == '' || text.trim() == null) {
+      setOrderList(defaultProducts);
+      return null;
+    }
+    const lowerText = text.toLowerCase();
+    console.log(text);
+    const filterItem = defaultProducts.filter(item => {
+      const lowerName = item._id.toLowerCase();
+      const match = lowerName.match(lowerText);
+
+      if (match != null) {
+        return true;
+      } else return false;
+    });
+    setOrderList(filterItem);
+  };
 
   const handleOrderStatus = (
     orderId,
@@ -126,10 +146,17 @@ const AdminPortalOrderDetails = () => {
         </div>
         <div className='adminPagemainContainer'>
           <div className='addarticleHeading'>Order Details</div>
+          <div className='searchbar'>
+            <input
+              type='text'
+              placeholder='Search order by Id'
+              onChange={e => filterIt(e.target.value)}
+            />
+          </div>
           {orderList.map(item => (
             <div className='eachOrderContainer' key={item._id}>
               <div className='orderDetailingContainer'>
-                <div className='itemName'>Order Id : #{item._id}</div>
+                <div className='itemName'>Order Id : {item._id}</div>
                 <ul>
                   {item.cart.map(cartItem => (
                     <li key={cartItem._id} className='listItem'>
